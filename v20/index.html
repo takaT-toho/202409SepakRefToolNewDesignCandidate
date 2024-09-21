@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>バレーボール試合スケジュール</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="modal-overlay">
+  <div class="modal-content">
+    <h2 class="modal-title">試合詳細 {試合名}</h2>
+    <div class="match-details">
+      <div class="match-info">
+        <p>ラウンド: <span>[1]</span></p>
+        <p>時間: <span>[10:00]</span></p>
+        <p>[コート: A]</p>
+        <p>試合番号: <span>[100]</span></p>
+      </div>
+      <div class="team-info">
+        <p>チーム名1: <span>{チームA}</span></p>
+        <p>チーム名2: <span>{チームB}</span></p>
+      </div>
+      <div class="score-summary">
+        <h3>[計]</h3>
+        <p>チームAセット数: <span>[{1}]</span></p>
+        <p>チームBセット数: <span>[{1}]</span></p>
+      </div>
+      <div class="set-scores">
+        <div class="set">
+          <h3>[1SET]</h3>
+          <p>チームA1セットポイント数: <span>[{15}]</span></p>
+          <p>チームB1セットポイント数: <span>[{8}]</span></p>
+        </div>
+        <div class="set">
+          <h3>[2SET]</h3>
+          <p>チームA2セットポイント数: <span>[{9}]</span></p>
+          <p>チームB2セットポイント数: <span>[{15}]</span></p>
+        </div>
+        <div class="set">
+          <h3>[3SET]</h3>
+          <p>チームA3セットポイント数: <span>[{0}]</span></p>
+          <p>チームB3セットポイント数: <span>[{0}]</span></p>
+        </div>
+      </div>
+      <div class="referee-info">
+        <p>[【主審】{チームC} & 【副審】{チームD}]</p>
+      </div>
+      <div class="match-status">
+        <p>[{試合終了}]</p>
+      </div>
+    </div>
+    <button class="close-modal">閉じる</button>
+  </div>
+</div>
+</body>
+</html>

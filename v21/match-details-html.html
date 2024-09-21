@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>試合詳細 #A1</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: san-serif;
+            background-color: #2c3e50;
+        }
+
+        .container {
+            background: linear-gradient(to bottom, #1a2a3a, #2c3e50);
+            color: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            max-width: 48rem;
+            margin: 2rem auto;
+            border: 8px double #4a5a6a;
+            box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content {
+            position: relative;
+            z-index: 10;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 1.1rem;
+            color: #ecf0f1;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .match-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .match-info > div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .match-info span {
+            color: #ecf0f1;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            padding: 3px;
+        }
+
+        .teams {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            align-items: center;
+        }
+
+        .team {
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            text-shadow: 1px 1px 0 #1a2a3a;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            height: 4.5rem;
+        }
+        
+        .team div {
+        	margin: auto;
+        }
+
+        .team-left {
+            justify-content: flex-end;
+            background: linear-gradient(to right, #558DD8, #60a5fa);
+        }
+
+        .team-right {
+            justify-content: flex-start;
+            background: linear-gradient(to right, #EB5B00, #f97316);
+        }
+
+        .vs {
+            font-weight: bold;
+            color: #bdc3c7;
+        }
+
+        .score {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 1.875rem;
+            font-weight: bold;
+        }
+
+        .score > div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .score-total {
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .set-scores {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+            align-items: center;
+        }
+
+        .set-score {
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 2rem;
+        }
+
+        .set-label {
+            color: #bdc3c7;
+            text-shadow: 1px 1px 0 #000;
+        }
+
+        .referees {
+            text-align: center;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            color: #ecf0f1;
+            text-shadow: 1px 1px 0 #000;
+        }
+
+        .match-status {
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            background: linear-gradient(to right, #6b7280, #7e9ca2);
+            color: white;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>試合詳細</h1>
+            
+            <div class="match-info">
+                <div>
+                    <span style="font-size: 1.25rem;">第<span id="modal_round">1</span>試合</span>
+                    <span style="font-size: 0.8rem;"><span id="modal_time">10:00</span></span>
+                </div>
+                <div>
+                    <span style="font-size: 1.25rem;"><span id="modal_court">A</span>コート</span>
+                    <span style="font-size: 0.8rem;">試合番号：<span id="modal_game_num">100</span></span>
+                </div>
+            </div>
+            
+            <div class="teams">
+                <div class="team team-left">
+                    <div id="modal_left_team_name">イーグルイーグル</div>
+                </div>
+                <div class="vs">VS</div>
+                <div class="team team-right">
+                    <div id="modal_right_team_name">タイガータイガー</div>
+                </div>
+            </div>
+            
+            <div class="score">
+                <div style="text-align: right; color: #60a5fa;" id="modal_left_total_sets">1</div>
+                <div class="score-total" style="text-align: center; color: #f1c40f;">計</div>
+                <div style="text-align: left; color: #f97316;" id="modal_right_total_sets">1</div>
+            </div>
+            
+            <div class="set-scores">
+                <div class="set-score" style="text-align: right; background-color: rgba(96, 165, 250, 0.125); color: #60a5fa;" id="modal_left_1set">15</div>
+                <div class="set-label">1SET</div>
+                <div class="set-score" style="text-align: left; background-color: rgba(249, 115, 22, 0.125); color: #f97316;" id="modal_right_1set">8</div>
+            </div>
+            
+            <div class="set-scores">
+                <div class="set-score" style="text-align: right; background-color: rgba(96, 165, 250, 0.125); color: #60a5fa;" id="modal_left_2set">9</div>
+                <div class="set-label">2SET</div>
+                <div class="set-score" style="text-align: left; background-color: rgba(249, 115, 22, 0.125); color: #f97316;" id="modal_right_2set">15</div>
+            </div>
+            
+            <div class="set-scores">
+                <div class="set-score" style="text-align: right; background-color: rgba(96, 165, 250, 0.125); color: #60a5fa;" id="modal_left_3set">0</div>
+                <div class="set-label">3SET</div>
+                <div class="set-score" style="text-align: left; background-color: rgba(249, 115, 22, 0.125); color: #f97316;" id="modal_right_3set">0</div>
+            </div>
+            
+            <div class="referees">
+                【主審】<span id="modal_left_judge">ホークス</span>
+                <br>【副審】<span id="modal_right_judge">ライオンズ</span>
+            </div>
+            
+            <div class="match-status" id="modal_game_status">
+                試合終了
+            </div>
+        </div>
+    </div>
+</body>
+</html>

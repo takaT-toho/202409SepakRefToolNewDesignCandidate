@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>バレーボール試合スケジュール</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="match-container">
+        <div class="match-card in_progress">
+            <div class="card-content">
+                <div class="section-time">
+                    <div class="section">1</div>
+                    <div class="time">10:00</div>
+                </div>
+                <div class="court">
+                    <div class="court-letter">A</div>
+                    <div class="court-label">コート</div>
+                </div>
+                <div class="match-info">
+                    <div class="teams">
+                        <div class="team team1">
+                            <div class="team-name">あいうえおかきく</div>
+                            <div class="score">
+                                <span class="sets">1</span>
+                                <div class="points">
+                                    <span>15</span>
+                                    <span>-</span>
+                                    <span>9</span>
+                                    <span>-</span>
+                                    <span>0</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="match-status">
+                            <span class="status-indicator in-progress"></span>
+                            <span class="status-text">試合中</span>
+                            <span class="versus">vs</span>
+                        </div>
+                        <div class="team team2">
+                            <div class="team-name">さしすせとたちつ</div>
+                            <div class="score">
+                                <span class="sets">1</span>
+                                <div class="points">
+                                    <span>8</span>
+                                    <span>-</span>
+                                    <span>15</span>
+                                    <span>-</span>
+                                    <span>0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="details-button" aria-label="チームA対チームBの試合詳細を表示">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+        </div>
+
+        <!-- 他の試合カードも同様に追加 -->
+        <div class="match-card not_started">
+            <div class="card-content">
+                <div class="section-time">
+                    <div class="section">1</div>
+                    <div class="time">10:00</div>
+                </div>
+                <div class="court">
+                    <div class="court-letter">A</div>
+                    <div class="court-label">コート</div>
+                </div>
+                <div class="match-info">
+                    <div class="teams">
+                        <div class="team team1">
+                            <div class="team-name">あいうえおかきく</div>
+                            <div class="score">
+                                <span class="sets">1</span>
+                                <div class="points">
+                                    <span>15</span>
+                                    <span>-</span>
+                                    <span>9</span>
+                                    <span>-</span>
+                                    <span>0</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="match-status">
+                            <span class="status-indicator not-started"></span>
+                            <span class="status-text">試合前</span>
+                            <span class="versus">vs</span>
+                        </div>
+                        <div class="team team2">
+                            <div class="team-name">さしすせとたちつ</div>
+                            <div class="score">
+                                <span class="sets">1</span>
+                                <div class="points">
+                                    <span>8</span>
+                                    <span>-</span>
+                                    <span>15</span>
+                                    <span>-</span>
+                                    <span>0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="details-button" aria-label="チームA対チームBの試合詳細を表示">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+        </div>
+        
+        <div class="match-card _finished">
+            <div class="card-content">
+                <div class="section-time">
+                    <div class="section">1</div>
+                    <div class="time">10:00</div>
+                </div>
+                <div class="court">
+                    <div class="court-letter">A</div>
+                    <div class="court-label">コート</div>
+                </div>
+                <div class="match-info">
+                    <div class="teams">
+                        <div class="team team1">
+                            <div class="team-name">あいうえおかきく</div>
+                            <div class="score">
+                                <span class="sets">1</span>
+                                <div class="points">
+                                    <span>15</span>
+                                    <span>-</span>
+                                    <span>9</span>
+                                    <span>-</span>
+                                    <span>0</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="match-status">
+                            <span class="status-indicator finished"></span>
+                            <span class="status-text">終了済</span>
+                            <span class="versus">vs</span>
+                        </div>
+                        <div class="team team2">
+                            <div class="team-name">さしすせとたちつ</div>
+                            <div class="score">
+                                <span class="sets">1</span>
+                                <div class="points">
+                                    <span>8</span>
+                                    <span>-</span>
+                                    <span>15</span>
+                                    <span>-</span>
+                                    <span>0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="details-button" aria-label="チームA対チームBの試合詳細を表示">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+        </div>
+
+    </div>
+</body>
+</html>
